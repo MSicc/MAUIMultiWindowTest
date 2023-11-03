@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:SecondaryWindowBasePage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mauiMultiWindowTest="clr-namespace:MauiMultiWindowTest"
+             xmlns:pages="clr-namespace:MauiMultiWindowTest.Pages"
+             xmlns:viewModels="clr-namespace:MauiMultiWindowTest.ViewModels"
+             x:Class="MauiMultiWindowTest.SecondaryPage"
+             x:DataType="viewModels:SecondaryPageViewModel"
+             ParentWindowAllowResize="False"
+             ParentWindowHeight="300"
+             ParentWindowWidth="300">
+    <ContentPage.Content>
+        <Label Text="{Binding ParentWindowTitle}" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               FontSize="20" />
+    </ContentPage.Content>
+</pages:SecondaryWindowBasePage>

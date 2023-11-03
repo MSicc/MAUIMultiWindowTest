@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<pages:ResizeableMacBasePage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mauiMultiWindowTest="clr-namespace:MauiMultiWindowTest"
+    xmlns:pages="clr-namespace:MauiMultiWindowTest.Pages"
+    xmlns:viewModels="clr-namespace:MauiMultiWindowTest.ViewModels"
+    x:Class="MauiMultiWindowTest.Pages.MainPage"
+    ParentWindowHeight="400"
+    ParentWindowWidth="600"
+    ParentWindowMinHeight="300"
+    ParentWindowMinWidth="500"
+    ParentWindowMaxHeight="1000"
+    ParentWindowMaxWidth="1400"
+    ParentWindowAllowResize="True"
+    x:DataType="viewModels:MainViewModel">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Testing .NET MAUI Windows on macOS"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="{Binding CounterBtnText}"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding CounterBtnCommand}"
+                HorizontalOptions="Center" />
+            
+            <Button
+                Text="Single Fixed Window 300x300"
+                HorizontalOptions="Center"
+                Command="{Binding ShowFixedWindowCommand}"></Button>            
+            
+            <Button
+                Text="Multiple Secondary Fixed Windows 300x300"
+                HorizontalOptions="Center"
+                Command="{Binding ShowMultipleFixedWindowsCommand}"></Button>            
+            
+            <Button
+                Text="Close all SecondaryWindows"
+                HorizontalOptions="Center"
+                Command="{Binding CloseAllSecondaryWindowsCommand}"></Button>
+            
+            <Button
+                Text="GoTo Secondary Page"
+                HorizontalOptions="Center"
+                Command="{Binding NavigateToInShellPageCommand}"></Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</pages:ResizeableMacBasePage>
