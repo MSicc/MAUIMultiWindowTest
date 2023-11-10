@@ -2,35 +2,35 @@ using MauiMultiWindowTest.Common;
 using MauiMultiWindowTest.Windows;
 namespace MauiMultiWindowTest.Pages
 {
-    public class ResizeableMacBasePage : ContentPage
+    public class ResizeableDesktopBasePage : ContentPage
     {
         public static readonly BindableProperty ParentWindowHeightProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowHeight), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowHeight), typeof(double), typeof(ResizeableDesktopBasePage), 
             double.PositiveInfinity, BindingMode.TwoWay, propertyChanged: OnDesiredWindowHeightChanged);
 
         public static readonly BindableProperty ParentWindowWidthProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowWidth), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowWidth), typeof(double), typeof(ResizeableDesktopBasePage), 
             double.PositiveInfinity, BindingMode.TwoWay, propertyChanged: OnDesiredWindowWidthChanged);
 
         public static readonly BindableProperty ParentWindowMinHeightProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowMinHeight), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowMinHeight), typeof(double), typeof(ResizeableDesktopBasePage), 
             (double)0, BindingMode.Default);
 
         public static readonly BindableProperty ParentWindowMinWidthProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowMinWidth), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowMinWidth), typeof(double), typeof(ResizeableDesktopBasePage), 
             (double)0, BindingMode.Default);
         
         public static readonly BindableProperty ParentWindowMaxHeightProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowMaxHeight), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowMaxHeight), typeof(double), typeof(ResizeableDesktopBasePage), 
             double.PositiveInfinity, BindingMode.Default);
 
         public static readonly BindableProperty ParentWindowMaxWidthProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowMaxWidth), typeof(double), typeof(ResizeableMacBasePage), 
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowMaxWidth), typeof(double), typeof(ResizeableDesktopBasePage), 
             double.PositiveInfinity, BindingMode.Default);
         
         
         public static readonly BindableProperty ParentWindowAllowResizeProperty = 
-            BindableProperty.Create(nameof(ResizeableMacBasePage.ParentWindowAllowResize), typeof(bool), typeof(ResizeableMacBasePage),
+            BindableProperty.Create(nameof(ResizeableDesktopBasePage.ParentWindowAllowResize), typeof(bool), typeof(ResizeableDesktopBasePage),
             true, BindingMode.TwoWay, propertyChanged: OnAllowResizePropertyChanged);
 
         private double _lastKnownParentWindowHeight;
@@ -111,14 +111,9 @@ namespace MauiMultiWindowTest.Pages
             
         }
 
-        protected override void OnSizeAllocated(double width, double height)
-        {
-            base.OnSizeAllocated(width, height);
-        }
-
         private static void OnDesiredWindowHeightChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (bindable is ResizeableMacBasePage current)
+            if (bindable is ResizeableDesktopBasePage current)
             {
                 if (current.Window == null)
                     return;
@@ -130,7 +125,7 @@ namespace MauiMultiWindowTest.Pages
         
         private static void OnDesiredWindowWidthChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (bindable is ResizeableMacBasePage current)
+            if (bindable is ResizeableDesktopBasePage current)
             {
                 if (current.Window == null)
                     return;
@@ -142,7 +137,7 @@ namespace MauiMultiWindowTest.Pages
         
         private static void OnAllowResizePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (bindable is ResizeableMacBasePage current)
+            if (bindable is ResizeableDesktopBasePage current)
             {
                 if (current.Window == null)
                     return;

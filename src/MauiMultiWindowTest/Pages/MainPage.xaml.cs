@@ -2,7 +2,7 @@
 using MauiMultiWindowTest.Windows;
 namespace MauiMultiWindowTest.Pages;
 
-public partial class MainPage : ResizeableMacBasePage
+public partial class MainPage : ResizeableDesktopBasePage
 {
     
 

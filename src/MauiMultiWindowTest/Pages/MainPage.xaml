@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<pages:ResizeableMacBasePage
+<pages:ResizeableDesktopBasePage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mauiMultiWindowTest="clr-namespace:MauiMultiWindowTest"
@@ -11,8 +11,8 @@
     ParentWindowWidth="600"
     ParentWindowMinHeight="300"
     ParentWindowMinWidth="500"
-    ParentWindowMaxHeight="1000"
-    ParentWindowMaxWidth="1400"
+    ParentWindowMaxHeight="800"
+    ParentWindowMaxWidth="1000"
     ParentWindowAllowResize="True"
     x:DataType="viewModels:MainViewModel">
     
@@ -35,7 +35,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Testing .NET MAUI Windows on macOS"
+                Text="{Binding WelcomeMessage}"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
@@ -69,4 +69,4 @@
         </VerticalStackLayout>
     </ScrollView>
 
-</pages:ResizeableMacBasePage>
+</pages:ResizeableDesktopBasePage>

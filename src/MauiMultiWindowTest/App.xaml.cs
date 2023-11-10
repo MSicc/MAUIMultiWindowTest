@@ -32,11 +32,18 @@ public partial class App : Application
             BindingContext = new AppShellViewModel()
         });
 
+        TryToSizeAsOnLastRun(window);
+
         return window;
     }
 
+    private void TryToSizeAsOnLastRun(PrimaryWindow window)
+    {
+        var lastknownMainWindowHeight = Preferences.Default.Get(Constants.SettingsLastKnownPrimaryWindowHeight, double.PositiveInfinity);
+        var lastknwonMainWindowWidth =
+            Preferences.Default.Get(Constants.SettingsLastKnownPrimaryWindowWidth, double.PositiveInfinity);
 
-    
-
-
+        window.Height = lastknownMainWindowHeight;
+        window.Width = lastknwonMainWindowWidth;
+    }
 }

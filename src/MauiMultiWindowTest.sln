@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiMultiWindowTest", "MauiMultiWindowTest\MauiMultiWindowTest.csproj", "{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiMultiWindowTest", "MauiMultiWindowTest\MauiMultiWindowTest.csproj", "{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,7 +13,11 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBC5DECB-F642-4B96-B324-FA9DB2A9A76C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

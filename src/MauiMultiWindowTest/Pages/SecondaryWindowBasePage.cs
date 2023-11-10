@@ -1,7 +1,7 @@
 using MauiMultiWindowTest.ViewModels;
 namespace MauiMultiWindowTest.Pages
 {
-    public class SecondaryWindowBasePage : ResizeableMacBasePage
+    public class SecondaryWindowBasePage : ResizeableDesktopBasePage
     {
         public static BindableProperty ParentWindowKeyProperty =>
                 BindableProperty.Create(nameof(SecondaryWindowBasePage.ParentWindowKey), typeof(string), typeof(SecondaryWindowBasePage));

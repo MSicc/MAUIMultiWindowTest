@@ -12,16 +12,21 @@ namespace MauiMultiWindowTest.ViewModels
         private int _count = 0;
         private string _counterBtnText = "Click me";
         private int _openedWindowCount;
+        private string _welcomeMessage;
 
         public MainViewModel(IShellNavigationService shellNavigationService, IWindowService windowService)
         {
             _shellNavigationService = shellNavigationService;
             _windowService = windowService;
+
             this.CounterBtnCommand = new RelayCommand(ExecuteCounter);
             this.NavigateToInShellPageCommand = new AsyncRelayCommand(GotoInShellPageAsync);
             this.ShowFixedWindowCommand = new RelayCommand(ShowFixedWindow);
             this.ShowMultipleFixedWindowsCommand = new RelayCommand(ShowMultipleFixedWindows);
             this.CloseAllSecondaryWindowsCommand = new RelayCommand(CloseAllSecondaryWindows);
+
+            this.WelcomeMessage = $"Testing multiple application windows on {DeviceInfo.Current.Platform}";
+
         }
         
         
@@ -68,6 +73,12 @@ namespace MauiMultiWindowTest.ViewModels
         {
             get => _counterBtnText;
             set => SetProperty(ref _counterBtnText, value);
+        }
+
+        public string WelcomeMessage
+        {
+            get => _welcomeMessage;
+            set => SetProperty(ref _welcomeMessage, value);
         }
 
         public RelayCommand CounterBtnCommand { get; }

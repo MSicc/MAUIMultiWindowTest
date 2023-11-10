@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using MauiMultiWindowTest.Common;
 namespace MauiMultiWindowTest.Windows
 {
@@ -7,7 +8,11 @@ namespace MauiMultiWindowTest.Windows
         {
             this.SizeChanged += (sender, args) =>
             {
+#if MACCATALYST
                 Console.WriteLine($"w:{this.Width} - h:{this.Height}");
+#elif WINDOWS
+                Debug.WriteLine($"w:{this.Width} - h:{this.Height}");
+#endif
             };
         }
         
@@ -26,8 +31,10 @@ namespace MauiMultiWindowTest.Windows
             {
                 Application.Current.CloseWindow(secondaryWindow);
             }
+
         }
 
+        //Mac only
         protected override void OnBackgrounding(IPersistedState state)
         {
             //this never gets reloaded from the OS (or MAUI)... 
